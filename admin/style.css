@@ -1,0 +1,23 @@
+@import url('https://fonts.cdnfonts.com/css/sf-pro-display');
+
+:root{
+    --redPurple : #22092C;
+    --darkPink : #872341;
+    --red : #BE3144;
+    --orange:#F05941;
+
+    --subText : 24px;
+    --headText : 28px;
+    --paraText : 20px;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'SF Pro Display', sans-serif;
+}
+
+/*ADD PRODUCTS*/
+.addproducts{
+    background-color: var(--redPurple);
+}

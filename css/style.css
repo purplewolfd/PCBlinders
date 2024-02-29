@@ -1,0 +1,389 @@
+@import url('https://fonts.cdnfonts.com/css/sf-pro-display');
+:root{
+    --redPurple : #22092C;
+    --darkPink : #872341;
+    --red : #BE3144;
+    --orange:#F05941;
+
+    --subText : 24px;
+    --headText : 28px;
+    --paraText : 20px;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'SF Pro Display', sans-serif;
+    transition: 0.3s;
+}
+
+
+/*LOADING*/
+
+.spinner-body{
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    background: url('../assets/loadbg.png');
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/*CURSOR*/
+
+.cursor {
+    display: block;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%);
+    border-radius: 50%;
+    background: transparent;
+    pointer-events: none;
+    z-index: 111;
+    border: 1px solid white;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 1), 0 0 20px rgba(255, 255, 255, 1), 0 0 30px rgba(255, 255, 255, 1), 0 0 40px rgba(255, 255, 255, 1), 0 0 70px rgba(255, 255, 255, 1);
+    transition: all 0.2s ease-out;
+    animation: moveCursor1 1s infinite alternate;
+}
+
+.expand {
+    background: transparent;
+    animation: moveCursor2 .5s forwards;
+    border: 1px solid white;
+}
+
+@keyframes moveCursor1 {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(.8);
+    }
+}
+
+@keyframes moveCursor2 {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(2);
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 0;
+    }
+}
+
+/*SUBMIT SUCCESS BOX*/
+
+/*.submit-success-box{
+    position: fixed;
+    min-width: 200px;
+    max-width: 500px;
+    min-height: 100px;
+    max-height: 200px;
+    background-color: whitesmoke;
+    color: black;
+    right: 50px;
+    bottom: 50px;
+}*/
+
+@keyframes fluid{
+    0%{
+        background-position: 0%;
+    }
+
+    50%{
+        background-position: 50%;
+    }
+
+    100%{
+        background-position: 100%;
+    }
+}
+
+
+
+/*NAVBAR*/
+
+.bg01{
+    background-color: var(--redPurple) !important;
+    color: white !important;
+}
+
+.bg02{
+    background-color: var(--red) !important;
+    color: white;
+}
+
+.navbar-brand{
+    font-size: var(--headText) !important;
+}
+
+.navbar{
+    box-shadow: 0px 10px 20px 1px var(--redPurple) !important;
+}
+
+.glasseffect{
+    backdrop-filter: blur(20px);
+}
+
+.nav-link{
+    color: white !important;
+    font-size: var(--subText);
+    transition: 0.3s !important;
+}
+.nav-link:hover{
+    color: var(--orange) !important;
+    transition: 0.3s;
+    letter-spacing: 10px !important;
+}
+
+/*HERO*/
+
+.hero{
+    width: 100%;
+    background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url('../assets/hero-bg.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
+.hero h1{
+    color: white !important;
+    text-shadow: 10px 5px 5px black;
+}
+
+.hero .lead{
+    color: var(--orange);
+    text-shadow: 0px 1px 15px white !important;
+}
+
+.hero img{
+    box-shadow: 5px 3px 20px 2px var(--red);
+}
+
+.hero .btn{
+    box-shadow: 10px 5px 20px 1px var(--red);
+    transition: 0.3s;
+}
+
+.hero .btn:hover{
+    box-shadow: 10px 10px 30px 1px white !important;
+    transform: translateY(-5px);
+    transition: 0.3s;
+}
+
+/*ABOUT*/
+
+.about{
+    width: 100%;
+    min-height: 20vh;
+    background: linear-gradient(240deg,var(--redPurple),var(--redPurple),var(--red),var(--redPurple),var(--redPurple),var(--red),var(--redPurple),var(--redPurple));
+    animation: fluid 5s infinite;
+    background-size: 180% 180%;
+}
+
+.about h1{
+    text-shadow: 10px 5px 5px var(--orange);
+}
+
+
+/*FEATURE*/
+
+.feature{
+    width: 100%;
+    min-height: 20vh;
+    background: linear-gradient(120deg,var(--redPurple),var(--redPurple),var(--darkPink),var(--redPurple),var(--redPurple),var(--darkPink), var(--redPurple),var(--redPurple));
+    animation: fluid 5s infinite;
+    background-size: 180% 180%;
+
+}
+
+.feature h1{
+    text-shadow: 10px 5px 5px black;
+}
+
+
+.swiper-pagination-bullet{
+    background-color: black;
+}
+
+
+.project{
+    overflow: hidden;
+    position: relative;
+}
+
+/* .swiper-slide img{
+    box-shadow: 5px 5px 20px 2px var(--red);
+} */
+.project .overlay{
+    padding: 32px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    color: var(--redPurple);
+    transition: all 0.5s ease-in-out;
+    opacity: 80%;
+    transform: translateY(65px);
+    transition: 0.3s;
+}
+
+.project h4{
+    opacity: 0;
+}
+
+.project:hover .overlay{
+    opacity: 100%;
+    transform: translateY(0);
+    
+    transition: 0.3s;
+    h4,p{
+        opacity: 100%;
+    }
+}
+
+.project:hover{
+    img{
+        filter: blur(2px);
+        filter: opacity(50%);
+    }
+}
+
+/*PREPC*/
+
+.prepc{
+    width: 100%;
+    min-height: 20vh;
+}
+
+
+/*LAPS*/
+
+.laps{
+    min-height: 350px;
+    width: 100%;
+    background-color: var(--darkPink) !important;
+    color: white;
+}
+
+.laps .lap-banner{
+
+    background-color: whitesmoke;
+    width: 100%;
+    height: 350px;
+    box-shadow: 10px 10px 20px 2px var(--redPurple);
+}
+
+/*ACCESS*/
+
+.access{
+    width: 100%;
+    min-height: 500px;
+
+}
+
+.access img{
+    width: 500px;
+    height: 500px;
+    box-shadow: none;
+    outline: #872341 2px solid;
+    padding: 1.5rem;
+}
+
+
+.cart-float-btn .btn{
+    height: 80px;
+    width: 80px;
+    border-radius: 100%;
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    box-shadow: 10px 5px 10px 2px black;
+    background-color: var(--redPurple);
+    color: white;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--subText);
+    transition: 0.3s;
+}
+
+.cart-float-btn .btn:hover{
+    height: 90px;
+    width: 90px;
+    box-shadow: 15px 7px 10px 2px black !important;
+    background-color: var(--redPurple);
+    color: var(--orange);
+    transition: 0.3s;
+}
+
+/*PREBUILTPC*/ /*A COMPLETE NEW CSS FOR ANOTHER PAGE*/
+
+
+.tray{
+    background-color: whitesmoke;
+}
+
+.prebuiltpc-hero{
+    width: 100%;
+    background: linear-gradient(240deg,var(--redPurple),var(--redPurple),var(--red),var(--redPurple),var(--redPurple),var(--red),var(--redPurple),var(--redPurple));
+    animation: fluid 2s infinite;
+    background-size: 180% 180%;
+    margin-top: 0px;
+}
+
+
+.category-btn{
+    border: 1px solid white !important;
+    background-color: white !important;
+    border-radius: 5% !important;
+    font-size: var(--paraText) !important;
+    transition: 0.3s !important;
+}
+
+.category-btn:hover{
+    color: var(--orange) !important;
+    background-color: var(--redPurple) !important;
+    letter-spacing: 5px !important;
+    transition: 0.3s;
+}
+
+.product-card{
+    max-height: 500px;
+    overflow: hidden;
+    box-shadow: 2px 5px 30px 1px black;
+    background-color: white;
+}
+
+
+
+
+
+/*LOGIN FORM*/
+
+.form-control{
+    border: 1px var(--orange) solid !important;
+    background-color: white !important;
+    color: var(--redPurple) !important;
+
+}
+
+.form-control:focus{
+    padding: 0.7rem !important;
+}
+
+/* PRODUCT PAGE */
+
+.productpage-hero{
+    width: 100%;
+
+    margin-top: 0px;
+}
